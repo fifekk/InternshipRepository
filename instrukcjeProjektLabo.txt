@@ -1,0 +1,16 @@
+
+1. Nale¿y otworzyæ w Unity3d projekt z folderu schoolRunner.
+	a) w razie pojawienia siê b³êdów nale¿y usun¹æ caly folder ProCore i pobraæ z Asset Store "Pro Builder Basic".
+2. Nale¿y "zbudowaæ" projekt na system operacyjny z którego korzystasz.
+3. Nale¿y otworzyæ w Unity3d projekt z folderu monopoly i "zbudowaæ" go na odpowiedni¹ platformê tak jak w punkcie powy¿ej.
+*Powy¿sze 2 projekty, które s¹ serwerami poszczególnych gier by³y testowanie tylko na Windowsie. 
+
+Posiadaj¹æ zbudowane serwery mo¿emy przejœæ do projektu z folderu Client2:
+4. Nale¿y otworzyæ plik config.ini i wpisaæ tam IP urz¹dzenia na którym bêd¹ uruchamiane projekty serwerów.(œcie¿ka do pliku config.ini ...Staz\monopoly\Assets\, ...Staz\DobryschoolRunner\schoolRunner\Assets\)
+5. Nale¿y otworzyæ i "zbudowaæ" projekt aplikacji klienckiej (folder Client 2).
+**Podczas testów u¿ywany by³ klient WebGL umieszczany na darmowym serwerze Microsoft Azure.
+6. W³¹czaj¹c grê nale¿y najpierw uruchomiæ odpowiedni¹ aplikacjê-serwer dopiero potem aplikacjê klienck¹.
+***Je¿eli testujemy projekt na komputerze i zarówno aplikacja kliencka jak i serwerowa s¹ uruchamiane jako standalone build to nale¿y w klasie server.cs
+w metodzie start(linia 38) u¿yæ nastêpuj¹cej linijki kodu: hostID = NetworkTransport.AddHost(topology, socketPort, null);
+Je¿eli client jest uruchomiony jako WebGL build to nale¿y u¿yæ nastêpuj¹cej linii kodu: hostID = NetworkTransport.AddWebsocketHost(topology, socketPort, null);
+ 
